@@ -1,24 +1,30 @@
-import { StyleSheet, Text } from "react-native";
+import { StatusBar } from "react-native";
+
+import { Background } from "@/src/components/Background/Background";
+import {
+  useFonts,
+  Inter_400Regular,
+  Inter_600SemiBold,
+  Inter_700Bold,
+  Inter_900Black,
+} from "@expo-google-fonts/inter";
+
+import { Home } from "../src/screens/Home/Home";
+import { Loading } from "../src/components/Loading/Loading";
 
 export default function HomeScreen() {
-  return <Text> Hello World!</Text>;
-}
+  const [fontsLoaded] = useFonts({
+    Inter_400Regular,
+    Inter_600SemiBold,
+    Inter_700Bold,
+    Inter_900Black,
+  });
 
-const styles = StyleSheet.create({
-  titleContainer: {
-    flexDirection: "row",
-    alignItems: "center",
-    gap: 8,
-  },
-  stepContainer: {
-    gap: 8,
-    marginBottom: 8,
-  },
-  reactLogo: {
-    height: 178,
-    width: 290,
-    bottom: 0,
-    left: 0,
-    position: "absolute",
-  },
-});
+  return (
+    <Background>
+      <StatusBar barStyle="light-content" translucent />
+
+      {fontsLoaded ? <Home /> : <Loading />}
+    </Background>
+  );
+}
