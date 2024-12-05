@@ -1,6 +1,5 @@
 import { StatusBar } from "react-native";
 
-import { Background } from "@/src/components/Background/Background";
 import {
   useFonts,
   Inter_400Regular,
@@ -9,8 +8,9 @@ import {
   Inter_900Black,
 } from "@expo-google-fonts/inter";
 
-import { Home } from "../src/screens/Home/Home";
+import { AppRoutes } from "../src/routes/app.routes";
 import { Loading } from "../src/components/Loading/Loading";
+import { Background } from "../src/components/Background/Background";
 
 export default function HomeScreen() {
   const [fontsLoaded] = useFonts({
@@ -24,7 +24,7 @@ export default function HomeScreen() {
     <Background>
       <StatusBar barStyle="light-content" translucent />
 
-      {fontsLoaded ? <Home /> : <Loading />}
+      {fontsLoaded ? <AppRoutes /> : <Loading />}
     </Background>
   );
 }
