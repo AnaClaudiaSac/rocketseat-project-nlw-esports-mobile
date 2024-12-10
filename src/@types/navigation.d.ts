@@ -8,7 +8,11 @@ export declare global {
   namespace ReactNavigation {
     interface RootParamList {
       home: undefined;
-      game: GameParams;
+      game: {
+        id: string;
+        title: string;
+        bannerUrl: string;
+      };
     }
   }
 }
