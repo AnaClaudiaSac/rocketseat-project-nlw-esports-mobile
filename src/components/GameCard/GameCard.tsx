@@ -1,12 +1,11 @@
 import {
+  Text,
   TouchableOpacity,
   ImageBackground,
   TouchableOpacityProps,
-  Text,
 } from "react-native";
 
 import { styles } from "./styles";
-import { THEME } from "../../theme";
 import { LinearGradient } from "expo-linear-gradient";
 
 export interface GameCardProps {

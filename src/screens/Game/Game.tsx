@@ -30,6 +30,9 @@ export function Game() {
       .then((data) => setDuos(data));
   }, []);
 
+  console.log(duos);
+  console.log(game.id);
+
   return (
     <Background>
       <SafeAreaView style={styles.container}>
@@ -57,7 +60,13 @@ export function Game() {
           data={duos}
           npm
           keyExtractor={(item) => item.id}
-          renderItem={({ item }) => <DuoCard data={item} />}
+          renderItem={({ item }) => (
+            <DuoCard data={item} onConnect={() => {}} />
+          )}
+          horizontal
+          style={styles.containerList}
+          contentContainerStyle={styles.contentList}
+          showsHorizontalScrollIndicator={false}
         />
       </SafeAreaView>
     </Background>
