@@ -4,12 +4,12 @@
     "slug": "mobile",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/icon.png",
+    "icon": "./assets/images/logo-nlw-esports.png",
     "scheme": "mobileapp",
     "splash": {
-      "image": "./assets/images/splash.png",
+      "image": "./assets/images/logo-nlw-esports.png",
       "resizeMode": "contain",
-      "backgroundColor": "#121214"
+      "backgroundColor": "#2e004b"
     },
     "updates": {
       "fallbackToCacheTimeout": 0

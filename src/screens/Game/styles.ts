@@ -31,8 +31,8 @@ export const styles = StyleSheet.create({
     width: "100%",
   },
   contentList: {
-    paddingLeft: 32,
-    paddingRight: 64,
+    paddingLeft: 30,
+    paddingRight: 60,
     alignItems: "flex-start",
   },
 });

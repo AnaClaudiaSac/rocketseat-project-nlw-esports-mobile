@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
+import { SafeAreaView } from "react-native-safe-area-context";
 import { useRoute, useNavigation } from "@react-navigation/native";
 import { View, Image, TouchableOpacity, FlatList } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
 
 import { Entypo } from "@expo/vector-icons";
 
@@ -9,13 +9,16 @@ import { styles } from "./styles";
 import { THEME } from "../../theme";
 import logoImg from "../../../assets/images/logo-nlw-esports.png";
 
+import { GameParams } from "@/src/@types/navigation";
+import { DuoMatch } from "../../components/DuoMatch/DuoMatch";
+import { Heading } from "../../../src/components/Heading/Heading";
 import { Background } from "../../components/Background/Background";
 import { DuoCard, DuoCardProps } from "../../../src/components/DuoCard/DuoCard";
-import { GameParams } from "@/src/@types/navigation";
-import { Heading } from "../../../src/components/Heading/Heading";
 
 export function Game() {
-  const [duos, setDuos] = useState<DuoCardProps>();
+  const [duos, setDuos] = useState<DuoCardProps[]>([]);
+  const [discordDuoSelected, setDiscordDuoSelected] =
+    useState("AnnaGabs#121214");
   const navigation = useNavigation();
   const route = useRoute();
   const game = route.params as GameParams;
@@ -67,6 +70,11 @@ export function Game() {
           style={styles.containerList}
           contentContainerStyle={styles.contentList}
           showsHorizontalScrollIndicator={false}
+        />
+        <DuoMatch
+          visible={discordDuoSelected.length > 0}
+          discord="AnnaGabs#121214"
+          onClose={() => setDiscordDuoSelected("")}
         />
       </SafeAreaView>
     </Background>
