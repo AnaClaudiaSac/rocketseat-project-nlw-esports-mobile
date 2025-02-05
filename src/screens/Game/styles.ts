@@ -10,11 +10,10 @@ export const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     paddingHorizontal: 32,
-    marginTop: 28,
     justifyContent: "space-between",
   },
   logo: {
-    width: 160,
+    width: 140,
     height: 80,
   },
   right: {

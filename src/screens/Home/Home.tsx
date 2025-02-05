@@ -20,9 +20,15 @@ export function Home() {
   }
 
   useEffect(() => {
-    fetch("http://192.168.1.10:3333/games")
+    console.log("here...");
+
+    fetch("http://10.0.2.2:3333/games")
       .then((response) => response.json())
-      .then((data) => setGames(data));
+      .then((data) => {
+        console.log("data", data);
+        setGames(data);
+      })
+      .catch((error) => console.log(error));
   }, []);
 
   return (
